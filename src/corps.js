@@ -6,9 +6,9 @@ import "./corpsCom.js";
 import CorpsCom from './corpsCom';
 
 
-import PhotoJ from '/Users/davidneftel/Desktop/ING4-OCRES/Web/TP4/my-app3/src/img/imageJ.png'
-import PhotoM from '/Users/davidneftel/Desktop/ING4-OCRES/Web/TP4/my-app3/src/img/imageM.png'
-import PhotoC from '/Users/davidneftel/Desktop/ING4-OCRES/Web/TP4/my-app3/src/img/imageC.png'
+import PhotoJ from '/Users/davidneftel/Desktop/ING4-OCRES/Web/TP4_WEB_OCRES/src/img/imageJ.png'
+import PhotoM from '/Users/davidneftel/Desktop/ING4-OCRES/Web/TP4_WEB_OCRES/src/img/imageM.png'
+import PhotoC from '/Users/davidneftel/Desktop/ING4-OCRES/Web/TP4_WEB_OCRES/src/img/imageC.png'
 
 
 
