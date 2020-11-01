@@ -3,7 +3,9 @@ import ReactDOM from "react-dom";
 import React, { Component } from "react";
 import "./index.css";
 
-import Corps from './corps';
+
+
+
 
 
  
@@ -13,11 +15,21 @@ class CorpsCom extends React.Component {
   super(props);
 
   this.state = {
+
     publicationContenu:'',
-    items:[]
+    items:[],
+    nbLikes: 0
     
-  };
+  }
 }
+/*
+ajoutlikes()
+{
+  this.setState = ({
+    
+    nbLikes : this.state.nbLikes +1
+});
+}*/
 
 onChange(event)
 {
@@ -41,7 +53,7 @@ renderPubl()
   return this.state.items.map((items)=>{
     return(
       <div key={items}>
-         {items} <button onClick={this.deletePubl.bind(this)}>X / commantaire de : {this.props.donnéeParentPrénom}</button>
+         {items} <button onClick={this.deletePubl.bind(this)}>X</button> <p> commantaire de : {this.props.donneeParentPrenom}</p>
       </div>
       );
   })
@@ -80,9 +92,7 @@ deletePubl(event)
 
           <div >
             {this.renderPubl()} 
-            commantaire de : {this.props.donnéeParentPrénom}
-
-            <button>C'est super</button>
+            <button /*onClick={() => this.ajoutlikes()}*/>C'est super</button>
           </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
@@ -90,13 +100,16 @@ deletePubl(event)
       </div>
     </div>
     
+    
     </div>
     );
   }
 }
 
+export default CorpsCom;
+
 //The data from parent is:{this.props.donnéeParentPrénom}
 //export default NavigationCorps;
-
+/*
 const rootElement4= document.getElementById("root4");
-ReactDOM.render(<CorpsCom />, rootElement4);
+ReactDOM.render(<CorpsCom />, rootElement4);*/

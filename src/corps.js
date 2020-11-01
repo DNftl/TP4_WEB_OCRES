@@ -6,12 +6,14 @@ import "./corpsCom.js";
 import CorpsCom from './corpsCom';
 
 
-import PhotoJ from '/Users/davidneftel/Desktop/ING4-OCRES/Web/TP4_WEB_OCRES/src/img/imageJ.png'
-import PhotoM from '/Users/davidneftel/Desktop/ING4-OCRES/Web/TP4_WEB_OCRES/src/img/imageM.png'
-import PhotoC from '/Users/davidneftel/Desktop/ING4-OCRES/Web/TP4_WEB_OCRES/src/img/imageC.png'
 
+//import PhotoJ from '/Users/davidneftel/Desktop/ING4-OCRES/Web/TP4_WEB_OCRES/src/img/imageJ.png' 
+//import PhotoM from '/Users/davidneftel/Desktop/ING4-OCRES/Web/TP4_WEB_OCRES/src/img/imageM.png'
+//import PhotoC from '/Users/davidneftel/Desktop/ING4-OCRES/Web/TP4_WEB_OCRES/src/img/imageC.png'
 
-
+/*import PhotoJ from 'imageJ.JPG' 
+import PhotoC from 'imageC.JPG' 
+import PhotoM from 'imageM.JPG'*/ 
 
 
 class Corps extends React.Component {
@@ -22,12 +24,38 @@ class Corps extends React.Component {
     super(props);
 
     this.state = {
+      profils : [
+      {
+
       Firstname: "Claude",
       Lastname: "Mont",
       DateNaissance: "21/12/1990",
       CouleurDeFondID: 0,
-      Photo : PhotoC
-  }
+      Photo : "imageC.JPG",
+      Publication : "Nouveau sur Facebook !",
+      nbLikes : 0,  
+  },
+  {
+      Firstname : "Martine",//this.state.name
+      Lastname: "Poe",
+      DateNaissance: "02/03/1988",
+      CouleurDeFondID: 0,
+      Photo :  "imageM.JPG",//PhotoM, //s'affiche sur mon ordi
+      Publication : "Je passe sur TF1 à 18h!",
+      nbLikes : 0,
+},
+{
+      Firstname : "Jeanne",//this.state.name
+      Lastname: "Laubert",
+      DateNaissance: "13/05/1995",
+      CouleurDeFondID: 0,
+      Photo :  "imageJ.JPG",//PhotoJ , //s'affiche sur mon ordi
+      Publication : "Salut tous le monde!",
+      nbLikes : 0,
+  },
+  ]
+}
+
 }
 
 
@@ -39,6 +67,7 @@ class Corps extends React.Component {
 			{
 				CouleurDeFondID:this.state.CouleurDeFondID +1
 			}*/
+    
 			
 		document.getElementById("myDIV").style.backgroundColor = couleur;	
 			
@@ -57,8 +86,10 @@ class Corps extends React.Component {
 		this.setState({
 			Firstname : "Jeanne",//this.state.name
 			Lastname: "Laubert",
-      		DateNaissance: "13/05/1995",
-			Photo : PhotoJ   		
+      DateNaissance: "13/05/1995",
+			Photo :  "imageJ.JPG",//PhotoJ , //s'affiche sur mon ordi
+      Publication : "Salut tous le monde!",
+      nbLikes : 0
 
 		});
 	}
@@ -68,8 +99,10 @@ class Corps extends React.Component {
 		this.setState({
 			Firstname : "Claude",//this.state.name
 			Lastname: "Mont",
-      		DateNaissance: "21/12/1990",
-      		Photo : PhotoC
+      DateNaissance: "21/12/1990",
+      Photo :  "imageC.JPG",//PhotoC, //s'affiche sur mon ordi
+      Publication : "Nouveau sur Facebook !",
+      nbLikes : 0
 		});
 	}
 	AffichageInfosMartine()
@@ -78,8 +111,10 @@ class Corps extends React.Component {
 		this.setState({
 			Firstname : "Martine",//this.state.name
 			Lastname: "Poe",
-      		DateNaissance: "02/03/1988",
-      		Photo : PhotoM
+      DateNaissance: "02/03/1988",
+      Photo :  "imageM.JPG",//PhotoM, //s'affiche sur mon ordi
+      Publication : "Je passe sur TF1 à 18h!",
+      nbLikes : 0
 		});
 	}
 
@@ -98,8 +133,9 @@ class Corps extends React.Component {
 
   render() {
 
-
     return (
+
+
 
 <div>
     	 <div>
@@ -134,6 +170,7 @@ class Corps extends React.Component {
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"> 
           	<p>Prenom : {this.state.Firstname}</p>
           	<p>Date de Naissance : {this.state.DateNaissance}</p>
+
           </div>
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"> 
           	<p>Nom : {this.state.Lastname}</p>
@@ -146,6 +183,11 @@ class Corps extends React.Component {
           <button class="w3-button w3-xlarge w3-circle w3-black" onClick={() => this.ChangeColorFunc('aqua')}>Change Style</button>
           <button class="w3-button w3-xlarge w3-circle w3-black" onClick={() => this.ChangeColorFunc('orange')}></button>
           <button class="w3-button w3-xlarge w3-circle w3-black" onClick={() => this.ChangeColorFunc('yellow')}></button>
+
+          <br /><br /><br />
+          <p>Dernière Publication: {this.state.Publication}</p>
+          <p> 👍 {this.state.nbLikes}</p>
+          <p>{this.state.CouleurDeFondID}</p>
         </div>
 
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
@@ -154,17 +196,12 @@ class Corps extends React.Component {
     </div>
     
     </div>
-    <corpsCom donnéeParentPrénom= {this.state.Firstname}/>
+
+    <CorpsCom donneeParentPrenom= {this.state.Firstname}/>
     </div>
     );
   }
 }
-/*
-class Car extends React.Component {
-  render() {
-    return <h2>I am a {this.props.donnéeParentPrénom}!</h2>;
-  }
-}*/
 
 
 
